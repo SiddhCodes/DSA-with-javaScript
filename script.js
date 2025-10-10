@@ -1,9 +1,15 @@
-// Reverse the array with extra space
+// Reverse the array without extra space
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
-let temp = new Array(arr.length);
+
 let i = 0;
-for (let j = arr.length - 1; j >= 0; j--) {
-  temp[i] = arr[j];
+let j = arr.length - 1;
+
+while (i < j) {
+  let temp = arr[i];
+  arr[i] = arr[j];
+  arr[j] = temp;
   i++;
+  j--;
 }
-console.log(temp);
+
+console.log(arr);
