@@ -1,9 +1,7 @@
-// Accept value from user and assign in the array
-let prompt = require("prompt-sync")();
-let size = Number(prompt("Enter array size: "));
-let arr = new Array(size);
-for (let i = 0; i < size; i++) {
-  let userV = prompt("Enter array values: ");
-  arr[i] = userV;
+// Sum of array’s element
+let arr = [1, 2, 3, 4, 5];
+let sum = 0;
+for (let i = 0; i < arr.length; i++) {
+  sum += arr[i];
 }
-console.log(arr);
+console.log(sum);
