@@ -1,15 +1,14 @@
-// Reverse the array without extra space
-let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
-
+// All zeroes to left and all ones to right
+let arr = [0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0];
 let i = 0;
-let j = arr.length - 1;
-
-while (i < j) {
-  let temp = arr[i];
-  arr[i] = arr[j];
-  arr[j] = temp;
+let j = 0;
+while (i < arr.length) {
+  if (arr[i] === 0) {
+    let temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
+    j++;
+  }
   i++;
-  j--;
 }
-
 console.log(arr);
