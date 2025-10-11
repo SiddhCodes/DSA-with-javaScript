@@ -1,14 +1,8 @@
-// All ones to left and all zeroes to right
-let arr = [0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0];
-let i = 0;
-let j = 0;
-while (i < arr.length) {
-  if (arr[i] === 1) {
-    let temp = arr[i];
-    arr[i] = arr[j];
-    arr[j] = temp;
-    j++;
-  }
-  i++;
+// Array left Rotation by 1
+let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+let temp = arr[0];
+for (let i = 0; i < arr.length - 1; i++) {
+  arr[i] = arr[i + 1];
 }
+arr[arr.length - 1] = temp;
 console.log(arr);
