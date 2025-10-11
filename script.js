@@ -1,8 +1,12 @@
-// Array right Rotation by 1
+// Array left rotation by K elements
+var prompt = require("prompt-sync")();
+let k = Number(prompt("Enter the number of rotations:"));
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-let temp = arr[arr.length - 1];
-for (let i = arr.length - 1; i > 0; i--) {
-  arr[i] = arr[i - 1];
+for (let i = 0; i < k; i++) {
+  let copy = arr[0];
+  for (let j = 0; j < arr.length - 1; j++) {
+    arr[j] = arr[j + 1];
+  }
+  arr[arr.length - 1] = copy;
 }
-arr[0] = temp;
 console.log(arr);
