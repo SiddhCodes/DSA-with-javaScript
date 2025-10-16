@@ -1,20 +1,16 @@
-//  Linear Search an array - If element found print the index else -1
-var prompt = require("prompt-sync")();
+// Bubble sort
+let arr = [3, 8, 9, 1, 4, 7, 2, 5, 6];
 
-let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-let userN = Number(prompt("Enter the number to find its index: "));
+let n = arr.length;
 
-let index = -1;
-
-for (let i = 0; i < arr.length; i++) {
-  if (arr[i] === userN) {
-    index = i;
-    break;
+for (let i = 0; i < n - 1; i++) {
+  for (let j = 0; j < n - 1 - i; j++) {
+    if (arr[j] > arr[j + 1]) {
+      let temp = arr[j];
+      arr[j] = arr[j + 1];
+      arr[j + 1] = temp;
+    }
   }
 }
 
-if (index !== -1) {
-  console.log(`The number ${userN} is found at index ${index} in the array.`);
-} else {
-  console.log(`The number ${userN} is not present in the array.`);
-}
+console.log(arr);
