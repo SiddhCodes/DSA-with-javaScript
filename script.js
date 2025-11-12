@@ -1,14 +1,20 @@
-// Insertion sort
-let arr = [3, 8, 9, 1, 4, 7, 2, 5, 6];
+// Multi D-Array
+let prompt = require("prompt-sync")();
+let arrSize = Number(prompt("Enter the size of the array: "));
+let arr = new Array(arrSize);
 
-for (let i = 1; i < arr.length; i++) {
-  let key = arr[i];
-  let j = i - 1;
-  while (j >= 0 && arr[j] > key) {
-    arr[j + 1] = arr[j];
-    j--;
-  }
-  arr[j + 1] = key;
+for (let i = 0; i < arr.length; i++) {
+  let innerArrSize = Number(prompt("Enter the size of the inner array: "));
+  arr[i] = new Array(innerArrSize);
 }
 
+for (let i = 0; i < arr.length; i++) {
+  for (let j = 0; j < arr[i].length; j++) {
+    arr[i][j] = Number(
+      prompt("Enter the element at position [" + i + "][" + j + "]: ")
+    );
+  }
+}
+
+console.log("Multi-Dimensional Array:");
 console.log(arr);
